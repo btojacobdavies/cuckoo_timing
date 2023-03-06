@@ -1,7 +1,8 @@
 #CODE ACCOMPANYING DAVIES ET AL (2023)
-#J. Davies & M. Kirkland
+#Jacob Davies & Máire Kirkland 2023
 #This code takes the pre-processed cuckoo migratory timing data and performs the analyses detailed in the manuscript:
-#"Spring arrival of the common cuckoo at breeding grounds is strongly determined by environmental conditions in tropical Africa"
+#"Spring arrival of the common cuckoo at breeding grounds is strongly determined 
+#by environmental conditions in tropical Africa"
 
 #Load packages
 require(lubridate) #Various date-related functions needed
@@ -360,7 +361,7 @@ for(i in 1:length(milestone_names)){
   var_cor_df$repeatability_uci[i]<-quantile(ptt_var_draws/total_var_draws,0.975)
 }
 
-#Nice table ('A1') for presentation, with uncertainty included
+#Table for presentation, with uncertainty included
 nice_var_cor_df_tab<-data.frame(matrix(nrow=length(milestone_names),ncol=11))
 names(nice_var_cor_df_tab)<-c("Milestone","Between_ind","Between_ind_CI","Within_ind","Within_ind_CI","sig_diff_84","Repeatability","Repeatability_CI","Mean_uncertainty","SD_uncertainty","N")
 nice_var_cor_df_tab$Milestone<-milestone_names
